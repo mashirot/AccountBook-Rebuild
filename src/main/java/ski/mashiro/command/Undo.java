@@ -26,6 +26,7 @@ public class Undo extends JSimpleCommand {
             sender.sendMessage("Undo Failed, cause by list is empty");
             return;
         }
+        Utils.balance.setBalance(Utils.balance.getBalance() - Utils.DEAL_LIST.get(Utils.DEAL_LIST.size() - 1).getMoney());
         Utils.DEAL_LIST.remove(Utils.DEAL_LIST.size() - 1);
         sender.sendMessage("Undo Success");
     }
